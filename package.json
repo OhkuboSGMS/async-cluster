@@ -1,12 +1,33 @@
 {
-  "name": "async-cluster",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "async-await-cluster",
+  "version": "0.9.0",
+  "description": "multi process with one line",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OhkuboSGMS/async-cluster"
+  },
+  "keywords": [
+    "node",
+    "async",
+    "cluster"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": "Okubo Shigemasa",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^12.12.14",
+    "ts-node": "^8.5.3",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "progress": "^2.0.3"
+  }
 }
