@@ -2,8 +2,7 @@
 run multiprocessing on line.
 [日本語](./README-ja.md)
 
-# Requirement
-node >
+
 # Feature
 * Await cluster process on async function
 * Auto distributing Jobs.
@@ -16,7 +15,7 @@ node >
 [example](example) show How To Use.
 
 
-##Worker
+## Worker
 Worker performs  given jobs.
 
 Process must be written to another file(like example/imageWorker.ts).
