@@ -1,6 +1,6 @@
 {
   "name": "async-await-cluster",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "multi process with one line",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

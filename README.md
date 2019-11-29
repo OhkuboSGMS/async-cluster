@@ -1,24 +1,24 @@
 # async-await cluster
 run multiprocessing on line.
+[日本語](./README-ja.md)
 
 # Requirement
-[日本語](./README-ja.md)
+node >
 # Feature
-* await cluster process on async function
-* make simple worker script
+* Await cluster process on async function
+* Auto distributing Jobs.
 * Force dividing worker script.
 
 # Install 
- npm:
  `npm install async-await-cluster`
- 
  
 # Example
 [example](example) show How To Use.
 
 
-`Worker`
-Worker performs the given job.
+##Worker
+Worker performs  given jobs.
+
 Process must be written to another file(like example/imageWorker.ts).
 
 [uuidWorker](example/uuidWorker.ts)
@@ -37,8 +37,10 @@ if (cluster.isWorker) {
 
 ```
 
+## Master
 master generates job arguments and specifies a script for processing to be executed in parallel.
-[uuidMater](example/generateUUIDv4Parallel.ts)
+
+[uuidMaster](example/generateUUIDv4Parallel.ts)
 
 ```typescript
 
@@ -50,6 +52,7 @@ import {parallelCreate} from "async-await-cluster";
     // pass worker script path
     const uuids = await parallelCreate(jobs.slice(0), __dirname + "/" + "uuidWorker.js");
 }
+main()
 
 ```
 
