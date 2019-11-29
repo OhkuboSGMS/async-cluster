@@ -1,12 +1,13 @@
 import {parallelCreate} from "async-await-cluster";
+
 const uuidv4 = require('uuid/v4');
 
 /**
- *  This multiprocessing not faster than Single Process.
+ *  This example async-await-cluster should  not be faster than Single Process.
  *  Worker Script:uuidWorker.ts
  */
 const main = async () => {
-    const jobs = Array.from({length: 1000000}, (_, idx) => idx);
+    const jobs = Array.from({length: 1000}, (_, idx) => idx);
     //multi process
     {
         console.time("Parallel");
@@ -17,9 +18,17 @@ const main = async () => {
     //single process
     {
         console.time("Single");
+        const ProgressBar = require("progress");
+        const bar = new ProgressBar("[:bar] :current :total :percent ETA :eta Sec :rate Job/Sec", {
+            total: jobs.length,
+        });
+        const tick = () => {
+            bar.tick();
+        };
         const uuids = [];
         for (const job of jobs) {
             uuids.push(uuidv4());
+            tick();
         }
         console.timeEnd("Single");
     }
